@@ -1,0 +1,40 @@
+$(document).foundation();
+
+;(function($){
+
+	$(window).load(function () {
+		var mapDiv = $('#map')[0];
+		var map = new google.maps.Map(mapDiv, {
+			center: {lat: 48.621136, lng: 35.227426},
+			zoom: 14,
+			scrollwheel: false
+		});
+
+		var marker = new google.maps.Marker({
+			position: {lat: 48.621136, lng: 35.227426},
+			map: map,
+			draggable: true,
+			icon: '../img/dote.png'
+		});
+
+
+	});
+
+	$(document).ready(function() {
+			$('.ba-slider').slick({
+			dots: true,
+			infinite:false,
+			slide: '.ba-slider__slide'
+		});
+
+
+		$('.ba-team__slider').slick({
+		  infinite: true,
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  slide: '.ba-team__slider__slide'
+		});
+	});
+
+})(jQuery);
+
